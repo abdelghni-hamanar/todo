@@ -32,13 +32,13 @@ const Navbar = () => {
         <div className={!nav ? 'fixed top-0 left-0 p-4 h-full border-r border-r-gray-100 bg-white w-[90%] shadow hover:shadow-md ease-in-out duration-200 lg:hidden' : 'fixed left-[-100%]'}>
                 <div className='flex'>
                         <span> <FcTodoList size={30} /></span>
-                        <h1 className='text-[#293856] text-2xl font-bold ml-2'>MyTodo</h1>
+                        <h1 className='text-[#293856] text-2xl font-bold ml-2'><Link to='home' smooth={true} duration={500}>MyTodo</Link></h1>
                 </div> 
                 <ul className='uppercase p-4'>
-                        <li className='p-4 font-semibold text-center border-b border-b-gray-300 hover:text-blue-400'>Home</li>
-                        <li className='p-4 font-semibold text-center border-b border-b-gray-300 hover:text-blue-400'>About</li>
-                        <li className='p-4 font-semibold text-center border-b border-b-gray-300 hover:text-blue-400'>Pricing</li>
-                        <li className='p-4 font-semibold text-center border-b border-b-gray-300 hover:text-blue-400'>Contact</li>
+                        <li className='p-4 font-semibold text-center border-b border-b-gray-300 hover:text-blue-400'><Link onClick={handleNav} to='home' smooth={true} duration={500}>Home</Link></li>
+                        <li className='p-4 font-semibold text-center border-b border-b-gray-300 hover:text-blue-400'><Link  onClick={handleNav}to='about' smooth={true} duration={500}>About</Link></li>
+                        <li className='p-4 font-semibold text-center border-b border-b-gray-300 hover:text-blue-400'><Link onClick={handleNav} to='pricing' smooth={true} duration={500}>Pricing</Link></li>
+                        <li className='p-4 font-semibold text-center border-b border-b-gray-300 hover:text-blue-400'><Link onClick={handleNav} to='contact' smooth={true} duration={500}>Contact</Link></li>
                 </ul>
                 <button className='p-4 w-full text-xl text-white bg-[#0065FF] hover:bg-[#0747A6] my-2 '>Get MyTodo for free</button>
                 <button className='p-4 w-full text-2xl hover:text-[#0747A6] border border-blue-500'>Log in</button>
