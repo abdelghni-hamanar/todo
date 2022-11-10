@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import {FcTodoList} from 'react-icons/fc'
 import {AiOutlineMenu, AiOutlineClose} from 'react-icons/ai'
+import { Link } from 'react-scroll';
 
 const Navbar = () => {
     const [nav, setNav] = useState(false)
@@ -13,13 +14,13 @@ const Navbar = () => {
     <div className='fixed w-full mx-auto bg-white h-[4rem] px-2 my-[-0.25rem] flex justify-between items-center shadow hover:shadow-lg'>
        <div className='flex'>
             <span> <FcTodoList size={30} /></span>
-            <h1 className='text-[#293856] text-2xl font-bold ml-2'>MyTodo</h1>
+            <h1 className='text-[#293856] text-2xl font-bold ml-2 cursor-pointer'><Link to='home' smooth={true} duration={500}>MyTodo</Link></h1>
        </div> 
        <ul className='hidden lg:flex'>
-        <li className='px-4 font-bold text-center hover:text-blue-400'>Home</li>
-        <li className='px-4 font-bold text-center hover:text-blue-400'>About</li>
-        <li className='px-4 font-bold text-center hover:text-blue-400'>Pricing</li>
-        <li className='px-4 font-bold text-center hover:text-blue-400'>Contact</li>
+        <li className='px-4 font-bold text-center hover:text-blue-400 cursor-pointer'><Link to='home' smooth={true} duration={500}>Home</Link></li>
+        <li className='px-4 font-bold text-center hover:text-blue-400 cursor-pointer'><Link to='about' smooth={true} duration={500}>About</Link></li>
+        <li className='px-4 font-bold text-center hover:text-blue-400 cursor-pointer'><Link to='pricing' smooth={true} duration={500}>Pricing</Link></li>
+        <li className='px-4 font-bold text-center hover:text-blue-400 cursor-pointer'><Link to='contact' smooth={true} duration={500}>Contact</Link></li>
        </ul>
         <div className='hidden lg:flex'>
         <button className='px-4 text-xl text-[#293856]'>Log in</button>
