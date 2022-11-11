@@ -1,18 +1,22 @@
 import './App.css';
-import About from './components/About';
-import Contact from './components/Contact';
-import Home from './components/Home';
 import Navbar from './components/Navbar';
-import Pricing from './components/Pricing';
+import Login from './components/pages/Login'
+import Signup from './components/pages/Signup'
+import Main from './components/Main';
+import { Routes,Route } from 'react-router-dom';
+import { AuthContextProvider } from './components/context/AuthContext';
 
 function App() {
   return (
     <>
-     <Navbar />
-     <Home />
-     <About />
-     <Pricing />
-     <Contact />
+      <AuthContextProvider>
+        <Navbar />
+          <Routes>
+              <Route path='/' element={<Main />}/>
+              <Route path='/login' element={<Login />}/>
+              <Route path='/signup' element={<Signup />}/>
+          </Routes>
+      </AuthContextProvider>
     </>
   );
 }
