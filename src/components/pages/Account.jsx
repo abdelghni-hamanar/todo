@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState,useEffect } from 'react'
 import {UserAuth} from '../context/AuthContext'
 import Task from '../Task'
 import {db} from '../../firebase'
@@ -11,6 +11,7 @@ const Account = () => {
   const [tstatus, setTaskStatus] = useState(1) 
 
   const TaskID = doc(db, 'users', `${user?.email}`);
+  
 
   const addTask = async () => {
     await updateDoc(doc(db,'users',user?.email),{
@@ -20,8 +21,10 @@ const Account = () => {
           tstate:tstatus
       })
     });
+    setTask('');
   }
-  
+
+ 
 
   return (
     <>
