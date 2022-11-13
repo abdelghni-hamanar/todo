@@ -2,7 +2,7 @@ import React from 'react'
 
 const Home = () => {
   return (
-        <div name="home" className=' w-full h-screen bg-gradient-to-b from-gray-200 to-white flex flex-col md:flex-row'>
+        <div name="home" id='home' className=' w-full h-screen bg-gradient-to-b from-gray-200 to-white flex flex-col md:flex-row'>
             <div className='block md:hidden'>
                 <img className='max-w-[450px] mt-[8rem] mx-auto' src="https://images.ctfassets.net/rz1oowkt5gyp/4EdaVcwdrnycEg4bDi0HvB/d02337f14d7596e1d08ffb18b3aaa1e4/Hero-mobile_2x.png?w=540&fm=webp" alt="/" />
             </div>

@@ -10,8 +10,9 @@ import ProtectedRoute from './components/ProtectedRoute'
 function App() {
   return (
     <>
+      
       <AuthContextProvider>
-        <Navbar />
+          <Navbar />
           <Routes>
               <Route path='/' element={<Main />}/>
               <Route path='/login' element={<Login />}/>

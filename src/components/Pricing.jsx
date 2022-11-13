@@ -2,7 +2,7 @@ import React from 'react'
 
 const Pricing = () => {
   return (
-    <div name="pricing" className='w-full h-screen bg-white'>
+    <div name="pricing" id='pricing' className='w-full h-screen bg-white'>
         <div class="container my-[20rem] md:my-8 px-6 mx-auto ">
             <section class="mb-32 text-gray-800">
             <div class="block rounded-lg shadow-lg bg-white">

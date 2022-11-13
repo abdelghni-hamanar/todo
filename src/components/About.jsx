@@ -3,7 +3,7 @@ import { Link } from 'react-scroll'
 
 const About = () => {
   return (
-    <div name="about" className='w-full h-screen bg-white'>
+    <div name="about" id='about' className='w-full h-screen bg-white'>
         <div className='flex flex-col md:flex-row max-w-[1000px] mx-auto justify-center w-full h-full p-10 mt-[20rem] md:my-0'>
             <div className='max-w-[300px] flex flex-row my-4 mx-auto '>
                 <img className='h-[20%] p-2 m-4'  src="https://images.ctfassets.net/rz1oowkt5gyp/2ozLp25HsHeANpiNqAwzGI/d60a017d2f214c28f774b35d03499782/tag.svg" alt="tag" />

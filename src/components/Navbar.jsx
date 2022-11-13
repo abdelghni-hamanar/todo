@@ -29,10 +29,10 @@ const Navbar = () => {
             <h1 className='text-[#293856] text-2xl font-bold ml-2 cursor-pointer'><Link to='/' smooth={true} duration={500}>MyTodo</Link></h1>
        </div> 
        <ul className='hidden lg:flex'>
-        <li className='px-4 font-bold text-center hover:text-blue-400 cursor-pointer'><Link to='home' smooth={true} duration={500}>Home</Link></li>
-        <li className='px-4 font-bold text-center hover:text-blue-400 cursor-pointer'><Link to='about' smooth={true} duration={500}>About</Link></li>
-        <li className='px-4 font-bold text-center hover:text-blue-400 cursor-pointer'><Link to='pricing' smooth={true} duration={500}>Pricing</Link></li>
-        <li className='px-4 font-bold text-center hover:text-blue-400 cursor-pointer'><Link to='contact' smooth={true} duration={500}>Contact</Link></li>
+        <li className='px-4 font-bold text-center hover:text-blue-400 cursor-pointer'><a href='./#home' smooth={true} duration={500}>Home</a></li>
+        <li className='px-4 font-bold text-center hover:text-blue-400 cursor-pointer'><a href='./#about' smooth={true} duration={500}>About</a></li>
+        <li className='px-4 font-bold text-center hover:text-blue-400 cursor-pointer'><a href='./#pricing' smooth={true} duration={500}>Pricing</a></li>
+        <li className='px-4 font-bold text-center hover:text-blue-400 cursor-pointer'><a href='./#contact' smooth={true} duration={500}>Contact</a></li>
        </ul>
         <div className='hidden lg:flex'>
           <button className='px-4 text-xl text-[#293856]'><Link to={user?.email ? "/account" : "/login" }>{user?.email ? 'Account' : 'Log in'}</Link></button>
@@ -47,15 +47,14 @@ const Navbar = () => {
                         <h1 className='text-[#293856] text-2xl font-bold ml-2'><Link onClick={handleNav} to='/' smooth={true} duration={500}>MyTodo</Link></h1>
                 </div> 
                 <ul className='uppercase p-4'>
-                        <li className='p-4 font-semibold text-center border-b border-b-gray-300 hover:text-blue-400'><Link onClick={handleNav} to='home' smooth={true} duration={500}>Home</Link></li>
-                        <li className='p-4 font-semibold text-center border-b border-b-gray-300 hover:text-blue-400'><Link  onClick={handleNav}to='about' smooth={true} duration={500}>About</Link></li>
-                        <li className='p-4 font-semibold text-center border-b border-b-gray-300 hover:text-blue-400'><Link onClick={handleNav} to='pricing' smooth={true} duration={500}>Pricing</Link></li>
-                        <li className='p-4 font-semibold text-center border-b border-b-gray-300 hover:text-blue-400'><Link onClick={handleNav} to='contact' smooth={true} duration={500}>Contact</Link></li>
+                        <li className='p-4 font-semibold text-center border-b border-b-gray-300 hover:text-blue-400'><a onClick={handleNav} href='./' smooth={true} duration={500}>Home</a></li>
+                        <li className='p-4 font-semibold text-center border-b border-b-gray-300 hover:text-blue-400'><a  onClick={handleNav} href='./#about' smooth={true} duration={500}>About</a></li>
+                        <li className='p-4 font-semibold text-center border-b border-b-gray-300 hover:text-blue-400'><a onClick={handleNav} href='./#pricing' smooth={true} duration={500}>Pricing</a></li>
+                        <li className='p-4 font-semibold text-center border-b border-b-gray-300 hover:text-blue-400'><a onClick={handleNav} href='./#contact' smooth={true} duration={500}>Contact</a></li>
                 </ul>
-                <button className='p-4 w-full text-xl text-white bg-[#0065FF] hover:bg-[#0747A6] my-2 '><Link to='/signup'>Get MyTodo for free</Link></button>
-                <button className='p-4 w-full text-2xl hover:text-[#0747A6] border border-blue-500'><Link to="/login">Log in</Link></button>
+                {user ? <button onClick={handleLogOut} className='p-4 w-full text-xl text-white bg-[#0065FF] hover:bg-[#0747A6] my-2 '>Log Out</button> : <button onClick={handleNav} className='p-4 w-full text-xl text-white bg-[#0065FF] hover:bg-[#0747A6] my-2 '><Link to='/signup'>Get MyTodo for free</Link></button>}
+                {user ? <button className='p-4 w-full text-2xl hover:text-[#0747A6] border border-blue-500'><Link to="/account">Account</Link></button> : <button onClick={handleNav} className='p-4 w-full text-2xl hover:text-[#0747A6] border border-blue-500'><Link to="/login">Log in</Link></button>}
         </div>
-        
     </div>
   )
 }
